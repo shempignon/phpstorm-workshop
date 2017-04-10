@@ -180,15 +180,54 @@ The plugin will highlight unused entries, or directories in you `.gitignore` fil
 
 Finally, one of my favorite plugin is called *Material Theme UI*. It simply is a theme for the entire IDE that comes with new set of icons, colors and is inspired by the [*sublime text's material theme*][2]. By the way every screenshot you see in this doc are made with this theme.
 
-## Version control
+## Version control (Git)
+
+Even though PhpStorm can handle project managed with Subversion, Mercurial, CVS or Perforce this chapter will only focus on the integration of Git (and GitHub to some extend).
 
 ### Basics
 
 ## Key features
 
+### Intentions
+
+When PhpStorm stumbles on your code, it tries to read your intention. Say you wrote this piece of code:
+
+```php
+public function indexAction()
+{
+    $feeds = $this->getDoctrine()
+        ->getRepository(Feed::class)
+        ->findAll();
+        
+    ...
+}
+```
+If you haven't imported the `Feed` class, PhpStorm will *tell* you that this class is undefined. To quickly fix this you can put your cursor on the *warned code* and hit `Alt+Enter`.
+
+![MARKDOWN_SUPPORT](./images/intentions.png)
+
+Intentions work almost everywhere, like when you want to replace double by single quotes, and can be customized. 
+
+### Multiple cursors
+
+If you want to edit multiple lines at the same time, you can maintain `Alt` key while selecting the lines you want to edit.
+
+![MULTIPLE_CURSORS](./images/multiple_cursors.gif)
+
+
+### Live Templates
+
+### Refactors
+
+### Generators
+
+### Terminal, SSH
+
+### Test REST API
+
 ## Vision
 
-In this chapter, I'll explain you my vision of what a good IDE should provide. So this chapter is highly opiniated, you may disagree - IT'S OKAY.
+In this chapter, I'll explain you my vision of what a good IDE should provide. So this chapter is highly subjective, you may disagree - IT'S OKAY.
 
 TL;DR: 
 - Keep your workflow as clean as possible, remove anything you dont use on a day to day basis,
