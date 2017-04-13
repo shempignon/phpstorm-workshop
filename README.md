@@ -23,7 +23,7 @@ The configuration is split between global and per project items. `File > Default
 
 PhpStorm comes with a lot of default keybinds depending on your OS and the default map you've selected on the first launch. This chapter is obviously not going to detail each and every action possible, instead I'd rather like to show you which are, in my opinion, some of the more interesting action you need to bind.
 
-Let's begin with 3 actions that will save you the most time:
+These are the 3 actions that will save you the most time:
 - Navigate > Class...
 - Navigate > File...
 - File structure
@@ -33,6 +33,8 @@ The first two will open a search bar where you can *fuzzy* search for a class / 
 File structure will open a filterable tree displaying the structure of the file. Here on can obviously click the hierarchy element you want to edit, but you can also start typing its name and hit `Enter`.
 
 ![FILE_STRUCTURE](./images/file_structure.gif)
+
+Using and abusing these keybinds will save you a lot of time browsing the project tree or scrolling to the depths of your projects.
 
 ### Php
 
@@ -54,7 +56,7 @@ Once you've configured a php interpreter, you can setup Composer by going to `La
 
 Configuring the directories can greatly increase indexing performance.
 
-If you project follows PSR-0/4, PhpStorm will prompt you with the following:
+If your project follows PSR-0/4, PhpStorm will prompt you with the following:
 
 ![DETECT_PSR](./images/detect_psr.png)
 
@@ -205,7 +207,7 @@ If you're cloning a project from GitHub, PhpStorm will ask you for you credentia
 
 #### Handling changes
 
-Say you've cloned the project you need to work on and begin making some changes. You can retrieve every changes you made in the *Version Control* panel in the `Local Changes` top tab.
+Say you've cloned the project you need to work on and begun making some changes. You can retrieve every changes you made in the *Version Control* panel in the `Local Changes` top tab.
 
 ![LOCAL_CHANGES](./images/local_changes.png)
 
@@ -229,7 +231,7 @@ Clicking theses markers makes reverting changes easy:
 
 #### Committing
 
-Once your happy with your changes, you're ready to commit them, simply go to the `Version Control` panel select the group of files you want to commit, and click the commit button on the left hand side.
+Once your happy with your changes, you're ready to commit them, simply go to the `Version Control` panel select the group of files you want to commit, and click the commit button on the left hand side, or right click and select Commit changes.
 
 You will be prompt with a window summarizing the changes, and asking you for a commit message.
 
@@ -256,7 +258,7 @@ Clicking on the branch menu will allow you to create new branch, or to perform o
 
 #### Updating
 
-PhpStorm comes with a way to update your project in a key stroke, based on your need it will perform a pull on the upstream branch configured - you can event tell PhpStorm to merge or rebase. And you don't even need to worry about the current state of your workflow, if you have any pending changes, PhpStorm will automatically stash them for you while updating, then reapply the your changes.
+PhpStorm comes with a way to update your project in a key stroke, based on your need it will perform a pull on the upstream branch configured - you can event tell PhpStorm to merge or rebase. And you don't even need to worry about the current state of your workflow, if you have any pending changes, PhpStorm will automatically stash them for you while updating, then reapply your changes.
 
 To update click `VCS > Update project ...`
  
@@ -272,9 +274,9 @@ When a merge conflict is detected, PhpStorm will prompt you with:
 
 ![MERGE_RESOLVE_PROMPT](./images/merge_resolve_prompt.png)
 
-This window allows you to quickly accept one version or the other of the file, `theirs` meaning the version of the file on the branch you're on - `yours` being the version of the file on the branch you want to merge. 
+This window allows you to quickly accept one version or the other of the file, `yours` meaning the version of the file on the branch you're on - `theirs` being the version of the file on the branch you want to merge. 
 
-If you're not sure or you want to edit the file before merging choose `Merge ...`, PhpStorm will present this intimidating windows; here you can see the two versions of the file (yours and theirs) on the sides, and in the middle you can edit
+If you're not sure or want to edit the file before merging choose `Merge ...`, PhpStorm will present this intimidating window; here you can see the two versions of the file (yours and theirs) on the sides, and in the middle you can edit
 
 ![MERGE_RESOLVE](./images/merge_resolve.png)
 
@@ -297,7 +299,7 @@ has been deleted, the line
 ```
 has been added, and that the line
 ```yaml
-- - { path: ^/admin/, roles: [ROLE_SUPER_ADMIN, ROLE_ADMIN, ROLE_MANAGER, R ...
+- { path: ^/admin/, roles: [ROLE_SUPER_ADMIN, ROLE_ADMIN, ROLE_MANAGER, R ...
 ```
 has been modified
 
@@ -363,6 +365,13 @@ Correctly used this feature will save you time writing repetitive code.
 
 To use it just click `Code > Generate`
 
+Generators are great when it comes to quickly setting up a new class, for example if you need to add a new entity you would:
+- Create a new class (and not bother with namespace since you have correctly configured autoloading)
+- Add some properties
+- Click `Generate > Getters and setters`
+
+And you're done.
+
 **NB:** To be even faster, when you've written a method you can generate its PHPDoc block simply by positioning the cursor above the method and hitting `/** + Enter`
 
 ![DOC_BLOCKS](./images/doc_blocks.gif)
@@ -377,7 +386,7 @@ Finally, you may sometimes need to download a file or a folder from the remote s
 
 ### Terminal, SSH
 
-We'll now focus on features you can find outside of PhpStorm, that said I think that gathering as much as tools possible in the same place really helps you being productive.
+We'll now focus on features you can find outside of PhpStorm, that said I think that gathering as much as tools possible in the same place really helps being productive.
 
 Let's start with the terminal / SSH.
 
